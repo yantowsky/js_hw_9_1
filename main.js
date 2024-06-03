@@ -12,7 +12,7 @@ function calcTotalSalary (company) {
     for (let key in company) {
         if (typeof (company[key]) === 'object') {
             calcTotalSalary(company[key]);
-        } else if (key === 'salary') {
+        } else if (key === 'salary' && typeof(company[key]) === 'number') {
             totalSalary += company[key];
         }
     }

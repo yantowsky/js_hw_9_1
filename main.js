@@ -8,12 +8,12 @@ let company = {
 
 let totalSalary = 0;
 
-function calcTotalSalary (company) {
-    for (let key in company) {
-        if (typeof (company[key]) === 'object') {
-            calcTotalSalary(company[key]);
-        } else if (key === 'salary' && typeof(company[key]) === 'number') {
-            totalSalary += company[key];
+function calcTotalSalary (obj) {
+    for (let key in obj) {
+        if (typeof (obj[key]) === 'object') {
+            calcTotalSalary(obj[key]);
+        } else if (key === 'salary' && typeof(obj[key]) === 'number') {
+            totalSalary += obj[key];
         }
     }
     return totalSalary;
